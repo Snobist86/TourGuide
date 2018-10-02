@@ -1,7 +1,6 @@
 package Tour.servlet.category;
 
 import Tour.Dto.category.CategoryDto;
-import Tour.entity.Category;
 import Tour.service.CategoryService;
 import Tour.util.JspPath;
 
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(value = "/createCategory", name = "createCategory")
 public class CategoryServlet extends HttpServlet {
@@ -24,7 +22,7 @@ public class CategoryServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         CategoryDto categoryDto = CategoryDto.builder()
                 .name(req.getParameter("name"))
                 .build();

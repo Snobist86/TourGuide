@@ -12,6 +12,7 @@
           <element id="library" level="project" name="lombok" />
           <element id="library" level="project" name="postgresql-42.2.1" />
           <element id="library" level="project" name="tomcat-jdbc" />
+          <element id="library" level="project" name="gson-2.6.2" />
         </element>
       </element>
     </root>

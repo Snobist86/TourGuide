@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateSightDto {
+public class ViewSightDto {
 
     private String name;
-    private Long cityId;
+    private String city;
     private Integer yearOfBuilding;
-    private Integer categoryId;
-    private Integer styleId;
+    private String category;
+    private String style;
     private Boolean isListUNESCO;
     private Double ratingOfTripAdvisor;
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 @WebFilter(servletNames = {"createCategory", "createStyle", "createCountry", "createCity",
-        "createSight", "registration", "login", "createAirport"})
+        "createSight", "registration", "login", "createAirport", "createReview"})
 public class EncodingFilter implements Filter {
 
     @Override

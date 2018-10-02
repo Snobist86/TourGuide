@@ -2,7 +2,6 @@ package Tour.Dao;
 
 import Tour.connetion.ConnectionPool;
 import Tour.entity.Country;
-import Tour.util.ConnectionManager;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

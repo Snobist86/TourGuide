@@ -8,10 +8,10 @@
     Пользователь: <input type="text" name="login"><br>
     Пароль: <input type="password" name="password"><br>
     Электронная почта: <input type="text" name="eMail"><br>
-    <input type="submit" value="Login"> <br>
+    <button type="submit">Регистрация</button> <br>
 </form>
 <form action="${pageContext.request.contextPath}/login" method="get">
-    <button type="submit">Lod in</button>
+    <button type="submit">Вход</button>
 </form>
 </body>
 </html>

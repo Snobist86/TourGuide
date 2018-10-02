@@ -16,4 +16,11 @@ public class User {
     private String password;
     private String eMail;
     private Integer roleId;
+
+    public User(Long id, String login, Integer roleId) {
+
+        this.id = id;
+        this.login = login;
+        this.roleId = roleId;
+    }
 }

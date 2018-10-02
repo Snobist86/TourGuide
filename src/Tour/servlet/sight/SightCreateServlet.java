@@ -1,11 +1,9 @@
 package Tour.servlet.sight;
 
-import Tour.Dto.sight.CreateSightDto;
-import Tour.entity.Category;
-import Tour.entity.City;
-import Tour.entity.Style;
+import Tour.Dto.sight.SightDto;
 import Tour.service.CategoryService;
 import Tour.service.CityService;
+import Tour.service.CountryService;
 import Tour.service.SightService;
 import Tour.service.StyleService;
 import Tour.util.JspPath;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(value = "/createSight", name = "createSight")
 public class SightCreateServlet extends HttpServlet {
@@ -32,8 +29,8 @@ public class SightCreateServlet extends HttpServlet {
             }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CreateSightDto sightDto = CreateSightDto.builder()
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        SightDto sightDto = SightDto.builder()
                 .name(req.getParameter("name"))
                 .cityId(Long.valueOf(req.getParameter("city")))
                 .yearOfBuilding(Integer.valueOf(req.getParameter("yearOfBuilding")))
@@ -44,7 +41,6 @@ public class SightCreateServlet extends HttpServlet {
                 .build();
 
         SightService.getInstance().save(sightDto);
-
         resp.sendRedirect("/createSight");
     }
 }

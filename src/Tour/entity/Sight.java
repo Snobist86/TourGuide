@@ -14,10 +14,10 @@ public class Sight {
 
     private Long id;
     private String name;
-    private Long cityId;
+    private City city;
     private Integer yearOfBuilding;
-    private Integer categoryId;
-    private Integer styleId;
+    private Category category;
+    private Style style;
     private Boolean isListUNESCO;
     private Double ratingOfTripAdvisor;
 }

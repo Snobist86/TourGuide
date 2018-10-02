@@ -11,4 +11,8 @@ public final class StringUtil {
     public static boolean isEmpty(String value) {
         return value == null || EMPTY.equals(value);
     }
+
+    public static String defaultParameter(String string) {
+        return EMPTY.equals(string) ? null : string;
+    }
 }

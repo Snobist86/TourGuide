@@ -1,5 +1,6 @@
 package Tour.Dao;
 
+import Tour.Dto.user.ChangeRoleUserDto;
 import Tour.connetion.ConnectionPool;
 import Tour.entity.User;
 import lombok.AccessLevel;
@@ -10,20 +11,34 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class UserDao {
 
     private static final UserDao INSTANCE = new UserDao();
 
-    private static final String SAVE =
-            "INSERT INTO tour_guide.user_of_application (login, password, e_mail) VALUES (?, ?, ?)";
+    private static final String SAVE = "INSERT INTO tour_guide.application_user (login, password, e_mail) VALUES (?, ?, ?)";
 
-    private static final String DELETE =
-            "DELETE FROM tour_guide.user_of_application WHERE id = ?";
+    private static final String DELETE = "DELETE FROM tour_guide.application_user WHERE id = ?";
+
+    private static final String FIND_ALL =
+            "SELECT " +
+                    "id, " +
+                    "login, " +
+                    "password, " +
+                    "e_mail, " +
+                    "role_id " +
+                    "FROM tour_guide.application_user u";
+
+    private static final String FIND_USER_BY_LOGIN = FIND_ALL + " WHERE u.login = ?";
+
+    private static final String FIND_USER_BY_ID = FIND_ALL + " WHERE u.id = ?";
 
     private static final String CHANGE_ROLE =
-            "UPDATE tour_guide.user_of_application SET role_id = ? WHERE id = ?";
+            "UPDATE tour_guide.application_user SET role_id = ? WHERE id = ?";
 
     public void save(User user) {
         try (Connection connection = ConnectionPool.getConnection();
@@ -31,8 +46,8 @@ public final class UserDao {
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.setString(3, user.getEMail());
-
             preparedStatement.executeUpdate();
+
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 user.setId(generatedKeys.getLong("id"));
@@ -42,14 +57,80 @@ public final class UserDao {
         }
     }
 
-    public void changeRole (User user) {
-
+    public Optional<User> findByLogin(String login) {
+        Optional<User> user = Optional.empty();
         try (Connection connection = ConnectionPool.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(CHANGE_ROLE)){
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_LOGIN)) {
+            preparedStatement.setString(1, login);
 
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                user = Optional.of(User.builder()
+                        .id(resultSet.getLong("id"))
+                        .login(resultSet.getString("login"))
+                        .password(resultSet.getString("password"))
+                        .eMail(resultSet.getString("e_mail"))
+                        .roleId(resultSet.getInt("role_id"))
+                        .build());
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return user;
+    }
+
+    public Optional<User> findById(Long id) {
+        Optional<User> user = Optional.empty();
+        try (Connection connection = ConnectionPool.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_ID)) {
+            preparedStatement.setLong(1, id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                user = Optional.of(User.builder()
+                .id(resultSet.getLong("id"))
+                .login(resultSet.getString("login"))
+                .password(resultSet.getString("password"))
+                .eMail(resultSet.getString("eMail"))
+                .build());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
+    public void changeRole(ChangeRoleUserDto user) {
+        try (Connection connection = ConnectionPool.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(CHANGE_ROLE)){
+            preparedStatement.setLong(1,user.getRoleId());
+            preparedStatement.setLong(2, user.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<User> findAll() {
+        List<User> users = new ArrayList<>();
+        try (Connection connection = ConnectionPool.getConnection();
+             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(FIND_ALL);
+            while (resultSet.next()) {
+                User user = User.builder()
+                        .id(resultSet.getLong("id"))
+                        .login(resultSet.getString("login"))
+                        .password(resultSet.getString("password"))
+                        .build();
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
     }
 
     public void delete(Long id) {

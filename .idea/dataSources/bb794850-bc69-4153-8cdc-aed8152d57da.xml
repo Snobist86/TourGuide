@@ -7,24 +7,33 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
-    <database id="3" parent="1" name="postgres">
-      <ObjectId>12401</ObjectId>
-    </database>
-    <database id="4" parent="1" name="restaurant_storage">
+    <database id="3" parent="1" name="restaurant_storage">
       <ObjectId>17061</ObjectId>
     </database>
-    <database id="5" parent="1" name="request_storage">
+    <database id="4" parent="1" name="request_storage">
       <ObjectId>17151</ObjectId>
     </database>
-    <database id="6" parent="1" name="heroes_repository">
+    <database id="5" parent="1" name="heroes_repository">
       <ObjectId>17165</ObjectId>
     </database>
-    <role id="7" parent="1" name="pg_signal_backend">
+    <database id="6" parent="1" name="booking">
+      <ObjectId>17212</ObjectId>
+    </database>
+    <database id="7" parent="1" name="postgres">
+      <ObjectId>17449</ObjectId>
+    </database>
+    <database id="8" parent="1" name="hotel_suite_booking">
+      <ObjectId>17450</ObjectId>
+    </database>
+    <database id="9" parent="1" name="hotel_booking">
+      <ObjectId>17568</ObjectId>
+    </database>
+    <role id="10" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
       <Inherit>1</Inherit>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
-    <role id="8" parent="1" name="postgres">
+    <role id="11" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <Inherit>1</Inherit>
@@ -35,124 +44,134 @@
       <ConnectionLimit>-1</ConnectionLimit>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="9" parent="2" name="public">
+    <schema id="12" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-03-25.11:05:14.168</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-09-30.14:58:30.813</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="10" parent="2" name="pg_catalog">
+    <schema id="13" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
     </schema>
-    <schema id="11" parent="2" name="pg_toast">
+    <schema id="14" parent="2" name="pg_toast">
       <ObjectId>99</ObjectId>
     </schema>
-    <schema id="12" parent="2" name="pg_temp_1">
+    <schema id="15" parent="2" name="pg_temp_1">
       <ObjectId>11848</ObjectId>
     </schema>
-    <schema id="13" parent="2" name="pg_toast_temp_1">
+    <schema id="16" parent="2" name="pg_toast_temp_1">
       <ObjectId>11849</ObjectId>
     </schema>
-    <schema id="14" parent="2" name="information_schema">
+    <schema id="17" parent="2" name="information_schema">
       <ObjectId>12113</ObjectId>
     </schema>
-    <schema id="15" parent="2" name="tour_guide">
+    <schema id="18" parent="2" name="tour_guide">
       <ObjectId>16898</ObjectId>
-      <IntrospectionTimestamp>2018-03-25.12:48:34.104</IntrospectionTimestamp>
-      <IntrospectionStateNumber>741</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-09-30.14:58:30.813</IntrospectionTimestamp>
+      <IntrospectionStateNumber>856</IntrospectionStateNumber>
       <Visible>1</Visible>
     </schema>
-    <sequence id="16" parent="15" name="airport_id_seq">
+    <sequence id="19" parent="18" name="airport_id_seq">
       <ObjectId>16936</ObjectId>
       <StateNumber>675</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="17" parent="15" name="category_id_seq">
+    <sequence id="20" parent="18" name="category_id_seq">
       <ObjectId>16899</ObjectId>
       <StateNumber>671</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="18" parent="15" name="city_id_seq">
+    <sequence id="21" parent="18" name="city_id_seq">
       <ObjectId>16923</ObjectId>
       <StateNumber>674</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="19" parent="15" name="comment_id_seq">
+    <sequence id="22" parent="18" name="comment_id_seq">
       <ObjectId>16996</ObjectId>
       <StateNumber>679</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="20" parent="15" name="country_id_seq">
+    <sequence id="23" parent="18" name="country_id_seq">
       <ObjectId>16915</ObjectId>
       <StateNumber>673</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="21" parent="15" name="role_id_seq">
+    <sequence id="24" parent="18" name="favorite_id_seq">
+      <ObjectId>17194</ObjectId>
+      <StateNumber>856</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="25" parent="18" name="role_id_seq">
       <ObjectId>16949</ObjectId>
       <StateNumber>676</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="22" parent="15" name="sight_id_seq">
+    <sequence id="26" parent="18" name="sight_id_seq">
       <ObjectId>16970</ObjectId>
       <StateNumber>678</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="23" parent="15" name="style_id_seq">
+    <sequence id="27" parent="18" name="style_id_seq">
       <ObjectId>16907</ObjectId>
       <StateNumber>672</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="24" parent="15" name="user_of_application_id_seq">
+    <sequence id="28" parent="18" name="user_of_application_id_seq">
       <ObjectId>16957</ObjectId>
       <StateNumber>677</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
-    <table id="25" parent="15" name="airport">
+    <table id="29" parent="18" name="airport">
       <ObjectId>16938</ObjectId>
       <StateNumber>675</StateNumber>
     </table>
-    <table id="26" parent="15" name="category">
+    <table id="30" parent="18" name="application_user">
+      <ObjectId>16959</ObjectId>
+      <StateNumber>856</StateNumber>
+    </table>
+    <table id="31" parent="18" name="category">
       <ObjectId>16901</ObjectId>
       <StateNumber>678</StateNumber>
     </table>
-    <table id="27" parent="15" name="city">
+    <table id="32" parent="18" name="city">
       <ObjectId>16925</ObjectId>
       <StateNumber>678</StateNumber>
     </table>
-    <table id="28" parent="15" name="comment">
+    <table id="33" parent="18" name="comment">
       <ObjectId>16998</ObjectId>
       <StateNumber>679</StateNumber>
     </table>
-    <table id="29" parent="15" name="country">
+    <table id="34" parent="18" name="country">
       <ObjectId>16917</ObjectId>
       <StateNumber>674</StateNumber>
     </table>
-    <table id="30" parent="15" name="role">
+    <table id="35" parent="18" name="favorite">
+      <ObjectId>17196</ObjectId>
+      <StateNumber>856</StateNumber>
+    </table>
+    <table id="36" parent="18" name="role">
       <ObjectId>16951</ObjectId>
       <StateNumber>721</StateNumber>
     </table>
-    <table id="31" parent="15" name="sight">
+    <table id="37" parent="18" name="sight">
       <ObjectId>16972</ObjectId>
-      <StateNumber>683</StateNumber>
+      <StateNumber>856</StateNumber>
     </table>
-    <table id="32" parent="15" name="style">
+    <table id="38" parent="18" name="style">
       <ObjectId>16909</ObjectId>
       <StateNumber>678</StateNumber>
     </table>
-    <table id="33" parent="15" name="user_of_application">
-      <ObjectId>16959</ObjectId>
-      <StateNumber>721</StateNumber>
-    </table>
-    <column id="34" parent="25" name="id">
+    <column id="39" parent="29" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -161,31 +180,31 @@
       <TypeId>23</TypeId>
       <SequenceName>tour_guide.airport_id_seq</SequenceName>
     </column>
-    <column id="35" parent="25" name="name">
+    <column id="40" parent="29" name="name">
       <Position>2</Position>
       <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>675</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="36" parent="25" name="city_id">
+    <column id="41" parent="29" name="city_id">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <StateNumber>675</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="37" parent="25" name="airport_pkey">
+    <index id="42" parent="29" name="airport_pkey">
       <ObjectId>16942</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="38" parent="25" name="airport_pkey">
+    <key id="43" parent="29" name="airport_pkey">
       <ObjectId>16943</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>airport_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="39" parent="25" name="airport_city_id_fkey">
+    <foreign-key id="44" parent="29" name="airport_city_id_fkey">
       <ObjectId>16944</ObjectId>
       <ColNames>city_id</ColNames>
       <RefTableId>16925</RefTableId>
@@ -194,305 +213,7 @@
       <RefKeyName>city_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="40" parent="26" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>671</StateNumber>
-      <DefaultExpression>nextval(&apos;category_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.category_id_seq</SequenceName>
-    </column>
-    <column id="41" parent="26" name="name">
-      <Position>2</Position>
-      <DataType>varchar(128)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>671</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="42" parent="26" name="category_pkey">
-      <ObjectId>16905</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="43" parent="26" name="category_pkey">
-      <ObjectId>16906</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="44" parent="27" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>674</StateNumber>
-      <DefaultExpression>nextval(&apos;city_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.city_id_seq</SequenceName>
-    </column>
-    <column id="45" parent="27" name="name">
-      <Position>2</Position>
-      <DataType>varchar(128)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>674</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="46" parent="27" name="country_id">
-      <Position>3</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>738</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="47" parent="27" name="city_pkey">
-      <ObjectId>16929</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="48" parent="27" name="city_pkey">
-      <ObjectId>16930</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>city_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="49" parent="27" name="city_county_id_fkey">
-      <ObjectId>16931</ObjectId>
-      <ColNames>country_id</ColNames>
-      <RefTableId>16917</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>country</RefTableName>
-      <RefKeyName>country_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="50" parent="28" name="id">
-      <Position>1</Position>
-      <DataType>bigint|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>679</StateNumber>
-      <DefaultExpression>nextval(&apos;comment_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>20</TypeId>
-      <SequenceName>tour_guide.comment_id_seq</SequenceName>
-    </column>
-    <column id="51" parent="28" name="text">
-      <Position>2</Position>
-      <DataType>varchar(2048)|0</DataType>
-      <StateNumber>679</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="52" parent="28" name="user_id">
-      <Position>3</Position>
-      <DataType>bigint|0</DataType>
-      <StateNumber>679</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="53" parent="28" name="sight_id">
-      <Position>4</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>679</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="54" parent="28" name="comment_pkey">
-      <ObjectId>17005</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="55" parent="28" name="comment_pkey">
-      <ObjectId>17006</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>comment_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="56" parent="28" name="comment_user_id_fkey">
-      <ObjectId>17007</ObjectId>
-      <ColNames>user_id</ColNames>
-      <RefTableId>16959</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>user_of_application</RefTableName>
-      <RefKeyName>user_of_application_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="57" parent="28" name="comment_sight_id_fkey">
-      <ObjectId>17012</ObjectId>
-      <ColNames>sight_id</ColNames>
-      <RefTableId>16972</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>sight</RefTableName>
-      <RefKeyName>sight_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="58" parent="29" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>673</StateNumber>
-      <DefaultExpression>nextval(&apos;country_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.country_id_seq</SequenceName>
-    </column>
-    <column id="59" parent="29" name="name">
-      <Position>2</Position>
-      <DataType>varchar(128)|0</DataType>
-      <StateNumber>673</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="60" parent="29" name="country_pkey">
-      <ObjectId>16921</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="61" parent="29" name="country_pkey">
-      <ObjectId>16922</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>country_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="62" parent="30" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>676</StateNumber>
-      <DefaultExpression>nextval(&apos;role_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.role_id_seq</SequenceName>
-    </column>
-    <column id="63" parent="30" name="name">
-      <Position>2</Position>
-      <DataType>varchar(32)|0</DataType>
-      <StateNumber>676</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="64" parent="30" name="role_pkey">
-      <ObjectId>16955</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="65" parent="30" name="role_pkey">
-      <ObjectId>16956</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>role_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="66" parent="31" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
-      <DefaultExpression>nextval(&apos;sight_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.sight_id_seq</SequenceName>
-    </column>
-    <column id="67" parent="31" name="name">
-      <Position>2</Position>
-      <DataType>varchar(256)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="68" parent="31" name="city_id">
-      <Position>3</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="69" parent="31" name="year_of_construction">
-      <Position>4</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>678</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="70" parent="31" name="category_id">
-      <Position>5</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="71" parent="31" name="style_id">
-      <Position>6</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="72" parent="31" name="is_list_unesco">
-      <Position>7</Position>
-      <DataType>boolean|0</DataType>
-      <StateNumber>678</StateNumber>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="73" parent="31" name="rating_tripadvisor">
-      <Position>8</Position>
-      <DataType>numeric|0</DataType>
-      <StateNumber>678</StateNumber>
-      <TypeId>1700</TypeId>
-    </column>
-    <index id="74" parent="31" name="sight_pkey">
-      <ObjectId>16979</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="75" parent="31" name="sight_pkey">
-      <ObjectId>16980</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>sight_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="76" parent="31" name="sight_city_id_fkey">
-      <ObjectId>16981</ObjectId>
-      <ColNames>city_id</ColNames>
-      <RefTableId>16925</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>city</RefTableName>
-      <RefKeyName>city_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="77" parent="31" name="sight_category_id_fkey">
-      <ObjectId>16986</ObjectId>
-      <ColNames>category_id</ColNames>
-      <RefTableId>16901</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>category</RefTableName>
-      <RefKeyName>category_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="78" parent="31" name="sight_style_id_fkey">
-      <ObjectId>16991</ObjectId>
-      <ColNames>style_id</ColNames>
-      <RefTableId>16909</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>style</RefTableName>
-      <RefKeyName>style_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="79" parent="32" name="id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>672</StateNumber>
-      <DefaultExpression>nextval(&apos;style_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>23</TypeId>
-      <SequenceName>tour_guide.style_id_seq</SequenceName>
-    </column>
-    <column id="80" parent="32" name="name">
-      <Position>2</Position>
-      <DataType>varchar(64)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>672</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="81" parent="32" name="style_pkey">
-      <ObjectId>16913</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="82" parent="32" name="style_pkey">
-      <ObjectId>16914</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>style_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="83" parent="33" name="id">
+    <column id="45" parent="30" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -501,63 +222,63 @@
       <TypeId>20</TypeId>
       <SequenceName>tour_guide.user_of_application_id_seq</SequenceName>
     </column>
-    <column id="84" parent="33" name="login">
+    <column id="46" parent="30" name="login">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
       <StateNumber>677</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="85" parent="33" name="password">
+    <column id="47" parent="30" name="password">
       <Position>3</Position>
       <DataType>varchar(64)|0</DataType>
       <StateNumber>677</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="86" parent="33" name="e_mail">
+    <column id="48" parent="30" name="e_mail">
       <Position>4</Position>
       <DataType>varchar(128)|0</DataType>
       <StateNumber>677</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="87" parent="33" name="role_id">
+    <column id="49" parent="30" name="role_id">
       <Position>7</Position>
       <DataType>integer|0</DataType>
       <StateNumber>721</StateNumber>
       <DefaultExpression>1</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <index id="88" parent="33" name="user_of_application_pkey">
+    <index id="50" parent="30" name="user_of_application_pkey">
       <ObjectId>16963</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="89" parent="33" name="user_of_application_login_key">
+    <index id="51" parent="30" name="user_of_application_login_key">
       <ObjectId>17161</ObjectId>
       <ColNames>login</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="90" parent="33" name="user_of_application_e_mail_key">
+    <index id="52" parent="30" name="user_of_application_e_mail_key">
       <ObjectId>17163</ObjectId>
       <ColNames>e_mail</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="91" parent="33" name="user_of_application_pkey">
+    <key id="53" parent="30" name="user_of_application_pkey">
       <ObjectId>16964</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_of_application_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="92" parent="33" name="user_of_application_login_key">
+    <key id="54" parent="30" name="user_of_application_login_key">
       <ObjectId>17162</ObjectId>
       <ColNames>login</ColNames>
       <UnderlyingIndexName>user_of_application_login_key</UnderlyingIndexName>
     </key>
-    <key id="93" parent="33" name="user_of_application_e_mail_key">
+    <key id="55" parent="30" name="user_of_application_e_mail_key">
       <ObjectId>17164</ObjectId>
       <ColNames>e_mail</ColNames>
       <UnderlyingIndexName>user_of_application_e_mail_key</UnderlyingIndexName>
     </key>
-    <foreign-key id="94" parent="33" name="user_of_application_role_id_fkey">
+    <foreign-key id="56" parent="30" name="user_of_application_role_id_fkey">
       <ObjectId>17142</ObjectId>
       <ColNames>role_id</ColNames>
       <RefTableId>16951</RefTableId>
@@ -566,5 +287,353 @@
       <RefKeyName>role_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
+    <column id="57" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>671</StateNumber>
+      <DefaultExpression>nextval(&apos;category_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.category_id_seq</SequenceName>
+    </column>
+    <column id="58" parent="31" name="name">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>671</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="59" parent="31" name="category_pkey">
+      <ObjectId>16905</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="60" parent="31" name="category_pkey">
+      <ObjectId>16906</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>674</StateNumber>
+      <DefaultExpression>nextval(&apos;city_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.city_id_seq</SequenceName>
+    </column>
+    <column id="62" parent="32" name="name">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>674</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="32" name="country_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>738</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="64" parent="32" name="city_pkey">
+      <ObjectId>16929</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="65" parent="32" name="city_pkey">
+      <ObjectId>16930</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>city_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="66" parent="32" name="city_county_id_fkey">
+      <ObjectId>16931</ObjectId>
+      <ColNames>country_id</ColNames>
+      <RefTableId>16917</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>country</RefTableName>
+      <RefKeyName>country_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="67" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>679</StateNumber>
+      <DefaultExpression>nextval(&apos;comment_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>tour_guide.comment_id_seq</SequenceName>
+    </column>
+    <column id="68" parent="33" name="text">
+      <Position>2</Position>
+      <DataType>varchar(2048)|0</DataType>
+      <StateNumber>679</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="69" parent="33" name="user_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>679</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="70" parent="33" name="sight_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>679</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="71" parent="33" name="comment_pkey">
+      <ObjectId>17005</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="33" name="comment_pkey">
+      <ObjectId>17006</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>comment_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="33" name="comment_user_id_fkey">
+      <ObjectId>17007</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16959</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>application_user</RefTableName>
+      <RefKeyName>user_of_application_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="74" parent="33" name="comment_sight_id_fkey">
+      <ObjectId>17012</ObjectId>
+      <ColNames>sight_id</ColNames>
+      <RefTableId>16972</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>sight</RefTableName>
+      <RefKeyName>sight_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="75" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>673</StateNumber>
+      <DefaultExpression>nextval(&apos;country_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.country_id_seq</SequenceName>
+    </column>
+    <column id="76" parent="34" name="name">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <StateNumber>673</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="77" parent="34" name="country_pkey">
+      <ObjectId>16921</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="78" parent="34" name="country_pkey">
+      <ObjectId>16922</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>country_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="79" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>856</StateNumber>
+      <DefaultExpression>nextval(&apos;favorite_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>tour_guide.favorite_id_seq</SequenceName>
+    </column>
+    <column id="80" parent="35" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>856</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="81" parent="35" name="sight_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>856</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="82" parent="35" name="favorite_pkey">
+      <ObjectId>17200</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="83" parent="35" name="favorite_pkey">
+      <ObjectId>17201</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>favorite_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="84" parent="35" name="favorite_user_id_fkey">
+      <ObjectId>17202</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16959</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>application_user</RefTableName>
+      <RefKeyName>user_of_application_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="85" parent="35" name="favorite_sight_id_fkey">
+      <ObjectId>17207</ObjectId>
+      <ColNames>sight_id</ColNames>
+      <RefTableId>16972</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>sight</RefTableName>
+      <RefKeyName>sight_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="86" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>676</StateNumber>
+      <DefaultExpression>nextval(&apos;role_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.role_id_seq</SequenceName>
+    </column>
+    <column id="87" parent="36" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <StateNumber>676</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="88" parent="36" name="role_pkey">
+      <ObjectId>16955</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="36" name="role_pkey">
+      <ObjectId>16956</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>role_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+      <DefaultExpression>nextval(&apos;sight_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.sight_id_seq</SequenceName>
+    </column>
+    <column id="91" parent="37" name="name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="92" parent="37" name="city_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="37" name="year_of_construction">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>678</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="94" parent="37" name="category_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="95" parent="37" name="style_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="96" parent="37" name="is_list_unesco">
+      <Position>7</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>678</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="97" parent="37" name="rating_tripadvisor">
+      <Position>8</Position>
+      <DataType>numeric|0</DataType>
+      <StateNumber>678</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="98" parent="37" name="sight_pkey">
+      <ObjectId>16979</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="37" name="sight_pkey">
+      <ObjectId>16980</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sight_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="100" parent="37" name="sight_city_id_fkey">
+      <ObjectId>16981</ObjectId>
+      <ColNames>city_id</ColNames>
+      <RefTableId>16925</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>city</RefTableName>
+      <RefKeyName>city_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="101" parent="37" name="sight_category_id_fkey">
+      <ObjectId>16986</ObjectId>
+      <ColNames>category_id</ColNames>
+      <RefTableId>16901</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>category</RefTableName>
+      <RefKeyName>category_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="102" parent="37" name="sight_style_id_fkey">
+      <ObjectId>16991</ObjectId>
+      <ColNames>style_id</ColNames>
+      <RefTableId>16909</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>style</RefTableName>
+      <RefKeyName>style_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="103" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>672</StateNumber>
+      <DefaultExpression>nextval(&apos;style_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>tour_guide.style_id_seq</SequenceName>
+    </column>
+    <column id="104" parent="38" name="name">
+      <Position>2</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>672</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="105" parent="38" name="style_pkey">
+      <ObjectId>16913</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="106" parent="38" name="style_pkey">
+      <ObjectId>16914</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>style_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

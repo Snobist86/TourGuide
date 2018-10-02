@@ -1,6 +1,6 @@
 package Tour.servlet.user;
 
-import Tour.Dto.user.UserDto;
+import Tour.Dto.user.FullInfoUserDto;
 import Tour.service.UserService;
 import Tour.util.JspPath;
 
@@ -23,14 +23,14 @@ public class RegistrationUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserDto userDto = UserDto.builder()
+        FullInfoUserDto fullInfoUserDto = FullInfoUserDto.builder()
                 .login(req.getParameter("login"))
                 .password(req.getParameter("password"))
                 .eMail(req.getParameter("eMail"))
                 .build();
 
-        UserService.getInstance().save(userDto);
+        UserService.getInstance().save(fullInfoUserDto);
 
-        resp.sendRedirect("registration");
+        resp.sendRedirect("/registration");
     }
 }

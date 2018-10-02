@@ -7,7 +7,7 @@
 <form action="${pageContext.request.contextPath}/createCategory" method="post">
     Название категории: <br>
     <input type="text" name="name"/> <br>
-    <input type="submit" value="Внести в базу">
+    <input type="submit" value="Внести в базу"/>
 </form>
 </body>
 </html>

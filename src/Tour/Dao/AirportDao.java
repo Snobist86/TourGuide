@@ -1,5 +1,7 @@
 package Tour.Dao;
 
+import Tour.Dto.airport.FullInfoAirportDto;
+import Tour.Dto.airport.SearchAirportDto;
 import Tour.connetion.ConnectionPool;
 import Tour.entity.Airport;
 import lombok.AccessLevel;
@@ -10,9 +12,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.sql.Types;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AirportDao {
@@ -24,26 +26,23 @@ public final class AirportDao {
 
     private static final String FIND_ANY_AIRPORT =
             "SELECT" +
-                    "  a.id   AS airport_id," +
-                    "  a.name AS airport_name " +
+                    "  a.id AS airport_id," +
+                    "  a.name AS airport_name," +
+                    "  a.city_id AS city_id," +
+                    "  c.name AS city_name " +
                     "FROM tour_guide.airport a" +
                     "  INNER JOIN tour_guide.city c" +
                     "    ON c.id = a.city_id" +
                     "  INNER JOIN tour_guide.country co" +
                     "    ON co.id = c.country_id " +
-                    "WHERE co.id = ? AND c.id = ?";
+                    "WHERE (? IS NULL OR co.id = ?) AND (? IS NULL OR c.id = ?)";
 
-
-
-    private static final String FIND_AIRPORT_BY_ID =
-            "SELECT" +
-                    "  a.id   AS airport_id," +
-                    "  a.name AS airport_name " +
-                    "FROM tour_guide.airport a " +
-                    "WHERE a.id = ?";
-
-    private static final String DELETE =
-            "DELETE FROM tour_guide.airport WHERE id = ?";
+//    private static final String FIND_AIRPORT_BY_ID =
+//            "SELECT" +
+//                    "  a.id   AS airport_id," +
+//                    "  a.name AS airport_name " +
+//                    "FROM tour_guide.airport a " +
+//                    "WHERE a.id = ?";
 
     public Airport save(Airport airport) {
         try (Connection connection = ConnectionPool.getConnection();
@@ -63,13 +62,17 @@ public final class AirportDao {
         return airport;
     }
 
-    public List<Airport> findAnyAirport() {
-        List<Airport> airports = new ArrayList<>();
+    public List<FullInfoAirportDto> findAnySight(SearchAirportDto dto) {
+        List<FullInfoAirportDto> airports = new LinkedList<>();
         try (Connection connection = ConnectionPool.getConnection();
-             Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(FIND_ANY_AIRPORT);
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_ANY_AIRPORT)) {
+            preparedStatement.setObject(1, dto.getCountryId(), Types.BIGINT);
+            preparedStatement.setObject(2, dto.getCountryId(), Types.BIGINT);
+            preparedStatement.setObject(3, dto.getCityId(), Types.BIGINT);
+            preparedStatement.setObject(4, dto.getCityId(), Types.BIGINT);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Airport airport = getAirportFromResultSet(resultSet);
+                FullInfoAirportDto airport = getAirportFromResultSet(resultSet);
                 airports.add(airport);
             }
         } catch (SQLException e) {
@@ -79,63 +82,29 @@ public final class AirportDao {
         return airports;
     }
 
-    public Optional<Airport> findById(Long id) {
-        Optional<Airport> airport = Optional.empty();
-        try (Connection connection = ConnectionPool.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(FIND_AIRPORT_BY_ID)) {
-            preparedStatement.setLong(1, id);
+//    public Optional<Airport> findById(Long id) {
+//        Optional<Airport> airport = Optional.empty();
+//        try (Connection connection = ConnectionPool.getConnection();
+//             PreparedStatement preparedStatement = connection.prepareStatement(FIND_AIRPORT_BY_ID)) {
+//            preparedStatement.setLong(1, id);
+//
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            if (resultSet.next()) {
+//                airport = Optional.of(getAirportFromResultSet(resultSet));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return airport;
+//    }
 
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                airport = Optional.of(getAirportFromResultSet(resultSet));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return airport;
-    }
-
-    private Airport getAirportFromResultSet(ResultSet resultSet) throws SQLException {
-        return Airport.builder()
+    private FullInfoAirportDto getAirportFromResultSet(ResultSet resultSet) throws SQLException {
+        return FullInfoAirportDto.builder()
                 .id(resultSet.getLong("airport_id"))
                 .name(resultSet.getString("airport_name"))
+                .city(resultSet.getString("city_name"))
                 .build();
-    }
-
-    public void delete(Long id) {
-        Connection connection = null;
-        PreparedStatement countryStatement = null;
-        try {
-            connection = ConnectionPool.getConnection();
-            connection.setAutoCommit(false);
-
-            countryStatement = connection.prepareStatement(DELETE);
-            countryStatement.setLong(1, id);
-            countryStatement.executeUpdate();
-
-            connection.commit();
-        } catch (SQLException e) {
-            if (connection != null) {
-                try {
-                    connection.rollback();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-            }
-            e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-                if (countryStatement != null) {
-                    countryStatement.close();
-                }
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-        }
     }
 
     public static AirportDao getInstance() {
